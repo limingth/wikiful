@@ -8,6 +8,8 @@
   <dd><%= @article.title %></dd>
   <dt><strong><%= model_class.human_attribute_name(:content) %>:</strong></dt>
   <dd><%= @article.content %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:categories) %>:</strong></dt>
+  <dd><% @article.categories.each do |category| %> <%= category.name %> &nbsp; <% end %></dd>
 </dl>
 
 <div class="form-actions">

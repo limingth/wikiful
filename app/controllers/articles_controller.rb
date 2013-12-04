@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-  before_filter :authorize, only: [:new, :edit, :update]
+  before_filter :authorize, only: [:new, :edit, :create, :update]
 
   def index
     @articles = Article.order(updated_at: :desc).limit(25)
@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      redirect_to @article
+      redirect_to @article, notice: 'Your article has been published!'
     else
       render "new"
     end

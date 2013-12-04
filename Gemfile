@@ -46,11 +46,15 @@ group :development, :test do
 gem 'faker'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
+
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
 gem 'twitter-bootstrap-rails'
 gem 'less-rails'
 gem 'therubyracer'
-
-gem 'rails_12factor', group: :production
+gem 'faker'
+#gem 'rails_12factor', group: :production
